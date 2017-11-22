@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>My Blog</title>
+        <link rel="stylesheet" href="assets/stylesheet/main.css">
+        <!-- include Font Awesome icon (from w3schools)-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">        
+        <!-- add slick -->
+        <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    </head>
+
+    <body>
+        <header class="container">
+            <h2 class="logo">Thang<br>2Andy</h2>
+
+            <div class="group bar">
+                <nav class="nav">
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="life.html">LIFE</a></li>
+                        <li><a href="career.html">CAREER</a></li>
+                        <li><a href="joy.html">JOY</a></li>
+                        <li><a href="aboutme.html">AboutMe</a></li>
+                    </ul>
+                </nav>
+
+                <div class="search">
+                    <input type="text" name="search" placeholder="Looking for?">
+                </div>
+            </div>
+        </header>
+
+        <!-- implement Slick: http://kenwheeler.github.io/slick/ -->
+        <div class="your-class">
+            <div><img src="assets/images/Family-life.jpg" alt="family life"></div><!--
+            --><div><img src="assets/images/Career.jpg" alt="Career"></div><!--
+            --><div><img src="assets/images/Joy.jpg" alt="Joy"></div>
+        </div>    
+
+        <section>
+            <h1>Introduction to each categories</h1> <br>
+            <p>I can do it. This is my chance</p>
+        </section>
+
+        <!-- add slick.js-->
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="slick/slick.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('.your-class').slick({
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    focusOnSelect: true,
+                    arrows:true,
+                    dots:true,
+                });
+            });
+        </script>
+
+    </body>
+</html>

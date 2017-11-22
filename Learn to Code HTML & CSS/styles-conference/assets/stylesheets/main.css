@@ -138,7 +138,7 @@ and margin (to center elements of grid)
 /*
 	================================
 	Clearfix
-	(to contain floats)
+	(to contain floats) (may need remember!?)
 	================================
 */
 .group:before,
@@ -266,7 +266,7 @@ h1, h3, h4, h5, p{
 	letter-spacing: .5px;
 	text-transform: uppercase;
 	border-radius: 5px;
-	display: inline-block;
+	display: inline-block;  /* so can add padding (below) w/o issue, if not, height default > cannot add padding */
 	margin: 0px;
 }
 .btn-alt {
