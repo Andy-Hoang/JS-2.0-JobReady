@@ -59,48 +59,20 @@ table {
 body {
 	font-family: Arial,sans-serif;
     font-weight: normal;
-    font-size: 16px;
+	font-size: 16px;
 }
-/*
-	================================
-	Header
-	================================
-*/
-.logo {
-	text-align:center;
-	font-size: 40px;
-	font-weight: bold;
-	margin: 20px 0;
+h1 {
+	font-size: 25px;
+	padding: 20px;
+	font-weight: 700;
 }
-.bar {
-	border: solid 1px #f92;
-	margin: 10px 5px;
-	background: linear-gradient(to right, #ffba24 65%, #ffcd29);
+h2 {
+	font-size: 20px;
+	padding: 10px 0;
+	font-weight: 700;
 }
-.nav {
-	float: left;
-}
-/* set nav link inline*/
-.nav li {
-	display: inline-block;
-	/* distance b/t each li*/
-	margin: 0 5px;			
-	font-size: 18px;
-}
-.search {
-	text-align: right;
-	padding-right: 10px;
-}
-.search input {
-	display: inline-block;
-	height: 30px;
-}
-.search input {
-	width: 30%;
-}
-/* trick to vertical center inline-* element: make line-height = height*/
-.bar, .nav, .search {
-	line-height: 50px;
+p {
+	font-size: 16px;
 }
 /*
 	================================
@@ -123,15 +95,86 @@ body {
 
 /*
 	================================
+	Header
+	================================
+*/
+.logo {
+	text-align:center;
+	font-size: 40px;
+	font-weight: bold;
+	margin: 20px 0;
+}
+.bar {
+	margin: 10px 5px;
+	background: linear-gradient(to right, #ffba24 65%, #ffcd29);
+}
+ul {
+	float: left;
+	list-style: none;
+	width: 50%;
+}
+/* set nav link inline*/
+.nav li {
+	display: inline-block;
+	/* distance b/t each li*/
+	margin: 0 10px;			
+	font-size: 20px;
+	letter-spacing: 0.5px;
+}
+.nav img {
+	width: 17px;
+	height: 17px;
+	padding: 0 3px;
+}
+.search {
+	text-align: right;
+	padding-right: 10px;
+}
+.search input {
+	display: inline-block;
+	padding: 0 10px;
+	margin-top: 2px;
+	height: 48px;
+	width: 15%;
+	/* apply transition, + below: focus*/
+	-moz-transition: width 1s ease-in-out;
+		 transition: width 1s ease-in-out;
+	/* notice relative path ../ */
+	background-image: url(../icons/magnifying-glass.png);
+	background-repeat: no-repeat;
+	background-size: 30px;
+	background-position: right;
+	border: 1px solid #000;
+	border-radius: 30px;
+	/* disable outline line (outside of border line)*/
+	outline: none;
+}
+.search input:focus {
+	width: 30%;
+}
+	/* addjust size of placeholder */
+.search input,
+.search input::-webkit-input-placeholder {
+    font-size: 20px;
+    line-height: 3;
+}
+
+/* trick to vertical center inline-* element: make line-height = height*/
+.bar, .nav, .search {
+	line-height: 50px;
+}
+
+/*
+	================================
 	link
 	================================
 */
 a {
 	text-decoration: none;
-	color: #0d68ca;
+	color: white;
 }
 a:hover {
-	color: #fff;	
+	color: #000;	
 }
 
 /*
@@ -141,11 +184,158 @@ a:hover {
 */
 .your-class {
 	/* use to contraisn width (2 img) */
-	width: 800px;
+	width: 1200px;
+	height: 400px;
 	/* horizontal center: margin: auto */ 
+	margin: 30px auto;
+}
+
+/* if only use .module > only cover space of h1+q */
+div .module {
+	width: 600px;
+	height: 400px;
+	background-size: cover;
+	position: relative;
+}
+
+/* fill color for background picture*/
+.life {
+	background:
+		linear-gradient(
+			rgba(0, 15, 200, 0.5),
+			rgba(0, 15, 200, 0.5)
+		),
+		url('../images/Family-life.jpg') no-repeat;
+}
+.career {
+	background:
+		linear-gradient(
+			rgba(255, 0, 0, 0.5),
+			rgba(255, 0, 0, 0.5)
+		),
+		url(../images/Career.jpg);	
+}
+.joy {
+	background:
+		linear-gradient(
+			rgba(0, 215, 15, 0.5),
+			rgba(0, 215, 15, 0.5)
+		),
+		url(../images/Joy.jpg);	
+}
+
+/* put text on picture */
+.text {
+	position: absolute;
+	/* way to center */
+	top: 35%;
+	left: 32%;
+	color: white;
+	text-align: center;	
+}
+
+/*
+	================================
+	Content body 
+	- Left
+	================================
+*/
+.container {
+	border: 3px solid rgb(0, 255, 76);
+}
+.left_container,
+.right_container {
+	border: 1px solid #ffcd29;
+	display: inline-block;
+	margin: 10px;
+	padding: 5px;
+	vertical-align: top;  /* default baseline > align to text*/
+}
+.left_container {
+	width: 68%;
+}
+.right_container {
+	width: 28%;
+}
+.left_container h1 {
+	text-align: center;		
+	margin: 0 auto;		/* center it relative to its parent*/
+	margin-top: -35px;
+	/* set box to cover text h2*/
+	background: white;
+	width: 250px;
+}
+
+/* Big-single content*/
+.left_content, .right_content {
+	width: 45%;
+	border: 3px solid red;
+	margin: 10px 20px;
+	word-wrap: break-word;	 /*if not, will flow to outside*/
+	display: inline-block;
+	vertical-align: top;  /* default baseline > align to text*/
+}
+.left_content img {
+	width:100%;		/*ensure img not exceed its parent's width*/
 	margin: 10px auto;
 }
-img {
-	width: 400px;
-	height: 300px;	
+.comment_box {
+	margin-bottom: 10px;
+	width: 100%;  /* ensure 1 line, others not wrap*/
+}
+.comment_box span {
+	padding-right: 20px;
+	font-size: 18px;
+}
+
+
+/*
+	================================
+	Content body 
+	- Right
+	================================
+*/
+.small_article {
+	width:100%;
+	border: 3px solid rgb(17, 0, 255);
+}
+.small_article img {
+	width:30%;
+	display: inline-block;
+	float: left;
+	padding: 10px;
+}
+
+/*
+	================================
+	Aside bar
+	================================
+*/
+.most_popular {
+	border: 3px solid red;
+	margin-bottom: 80px;
+	
+}
+.most_popular h1{
+	background-color: white;
+	width:40%;
+	margin-top: -35px;
+	padding-left: 10px;
+}
+
+.cat_list {
+	border: 3px solid red;
+	width: 100%;
+	margin: 80px auto;
+}
+.cat_list li {
+	padding-bottom: 20px;
+	list-style: square;
+	margin-left: 10px;
+}
+.cat_list h1{
+	background-color: white;
+	width:40%;
+	margin-top: -35px;
+	padding-left: 10px;
 }
